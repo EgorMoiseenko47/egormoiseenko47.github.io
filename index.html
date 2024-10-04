@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Интернет-магазин техники</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">TechStore</div>
+            <ul class="nav-links">
+                <li><a href="#home">Главная</a></li>
+                <li><a href="#laptops">Ноутбуки</a></li>
+                <li><a href="#smartphones">Смартфоны</a></li>
+                <li><a href="#accessories">Аксессуары</a></li>
+                <li><a href="#about">О нас</a></li>
+                <li><a href="#contact">Контакты</a></li>
+                <li><a href="#" id="open-cart">Корзина (<span id="cart-count">0</span>)</a></li>
+                <li><a href="#" id="open-register">Регистрация</a></li>
+                <li><a href="#" id="open-login">Вход</a></li>
+            </ul>
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    
+    
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Добро пожаловать в TechStore</h1>
+                <p>Ваши любимые гаджеты и электроника по лучшим ценам!</p>
+                <a href="#shop" class="btn-primary">Посмотреть товары</a>
+            </div>
+        </section>
+
+        
+            <div class="timer-container">
+                <h1>
+                    До конца акции</h1>
+                <div id="countdown">
+                    <div class="time-section">
+                        <span id="days" class="time"></span>
+                        <span class="label">DAYS</span>
+                    </div>
+                    <div class="time-section">
+                        <span id="hours" class="time"></span>
+                        <span class="label">HOURS</span>
+                    </div>
+                    <div class="time-section">
+                        <span id="minutes" class="time"></span>
+                        <span class="label">MINUTES</span>
+                    </div>
+                    <div class="time-section">
+                        <span id="seconds" class="time"></span>
+                        <span class="label">SECONDS</span>
+                    </div>
+                </div>
+                <div id="message"></div>
+            </div>
+        
+            <script src="script.js"></script>
+        
+
+        <section id="shop" class="product-grid">
+            <h2>Популярные товары</h2>
+            <div class="products">
+                <div class="product-card">
+                    <img src="laptop.jpg" alt="Ноутбук">
+                    <div class="product-info">
+                        <h3>Ноутбук Apple</h3>
+                        <p class="price">1.488₽</p>
+                        <button class="btn-secondary">Купить</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="smartphone.jpg" alt="Смартфон">
+                    <div class="product-info">
+                        <h3>Смартфон Apple</h3>
+                        <p class="price">30,000₽</p>
+                        <button class="btn-secondary">Купить</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="headphones.jpg" alt="Наушники">
+                    <div class="product-info">
+                        <h3>Наушники Apple</h3>
+                        <p class="price">7,500₽</p>
+                        <button class="btn-secondary">Купить</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="monitor.jpg" alt="Монитор">
+                    <div class="product-info">
+                        <h3>Монитор Apple</h3>
+                        <p class="price">20,000₽</p>
+                        <button class="btn-secondary">Купить</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    
+
+    <!-- Регистрация -->
+    <div id="register-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-register">&times;</span>
+            <h2>Регистрация</h2>
+            <form id="register-form">
+                <label for="reg-username">Имя пользователя:</label>
+                <input type="text" id="reg-username" name="username" required>
+                
+                <label for="reg-email">Email:</label>
+                <input type="email" id="reg-email" name="email" required>
+                
+                <label for="reg-password">Пароль:</label>
+                <input type="password" id="reg-password" name="password" required>
+                
+                <button type="submit" class="btn-primary">Зарегистрироваться</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Вход -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-login">&times;</span>
+            <h2>Вход</h2>
+            <form id="login-form">
+                <label for="login-email">Email:</label>
+                <input type="email" id="login-email" name="email" required>
+                
+                <label for="login-password">Пароль:</label>
+                <input type="password" id="login-password" name="password" required>
+                
+                <button type="submit" class="btn-primary">Войти</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Корзина -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-cart">&times;</span>
+            <h2>Ваша корзина</h2>
+            <div id="cart-items">
+                <!-- Товары будут динамически добавляться сюда -->
+            </div>
+            <p>Итого: <span id="cart-total">0</span>₽</p>
+            <button class="btn-primary" id="checkout-btn">Оформить заказ</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <footer>
+        <p>&copy; 2024 TechStore. Все права защищены.</p>
+        <ul class="footer-links">
+            <li><a href="#privacy">Политика конфиденциальности</a></li>
+            <li><a href="#terms">Условия использования</a></li>
+            <li><a href="#contact">Контакты</a></li>
+        </ul>
+    </footer>
+</body>
+</html>
